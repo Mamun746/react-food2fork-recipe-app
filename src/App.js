@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
+import Home from './pages/Home'
+import Recipe from './pages/Recipe'
+import SingleRecipe from './pages/SingleRecipe'
+import Default from './pages/Default'
 
 export class App extends Component {
   state={
@@ -51,16 +55,10 @@ export class App extends Component {
   render() {
     return (
       <div>
-      <form onSubmit={this.submitRecipe}>
-      <input type="text" value={this.state.searchRecipe} onChange={this.handleOnchange}/>
-      
-      </form>
-      {
-        this.state.recipes.map((recipe)=>{
-          return <img height='300px' width="300px" src={recipe.image_url} alt='mamun'/>
-        })
-      }
-       <h1>Hello</h1>
+      <Home/>
+      <Recipe/>
+      <SingleRecipe/>
+      <Default/>
       </div>
     )
   }
